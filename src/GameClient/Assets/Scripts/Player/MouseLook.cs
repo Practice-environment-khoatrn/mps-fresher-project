@@ -13,6 +13,8 @@ public class MouseLook : MonoBehaviour
     private float _lookSpeed;
     [SerializeField]
     private Transform _playerCamera;
+    [SerializeField]
+    private Transform _player;
 
     const float FullCircleDegree = 2 * Mathf.PI * Mathf.Rad2Deg;
 
@@ -30,7 +32,7 @@ public class MouseLook : MonoBehaviour
     private void UpdateYaw()
     {
         float yaw = SimpleInput.GetAxis("Look Joystick X");
-        transform.Rotate(0, yaw * _lookSpeed, 0);
+        _player.transform.Rotate(0, yaw * _lookSpeed, 0);
     }
 
     private void UpdatePitch()

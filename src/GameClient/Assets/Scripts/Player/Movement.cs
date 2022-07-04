@@ -5,28 +5,39 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [HideInInspector]
-    [SerializeField]
-    private CharacterController _characterController;
+    private Transform _playerTransform;
+    private CharacterController _playerCharacterController;
 
     [SerializeField]
     private float _moveSpeed;
+    [SerializeField]
+    private GameObject _fpsPlayer;
 
     private void OnValidate()
     {
-        _characterController = GetComponent<CharacterController>();
+        _playerTransform = _fpsPlayer.GetComponent<Transform>();
+        _playerCharacterController = _fpsPlayer.GetComponent<CharacterController>();
     }
 
     private void Update()
     {
         MoveByKey();
+        MoveByJoystick();
     }
 
     private void MoveByKey()
     {
         float xMove = Input.GetAxis("Horizontal");
         float zMove = Input.GetAxis("Vertical");
-        Vector3 moveDirection = transform.forward * zMove + transform.right * xMove;
-        _characterController.SimpleMove(moveDirection * _moveSpeed);
+        Vector3 moveDirection = _playerTransform.forward * zMove + _playerTransform.right * xMove;
+        _playerCharacterController.SimpleMove(moveDirection * _moveSpeed);
+    }
+
+    private void MoveByJoystick()
+    {
+        float xMove = SimpleInput.GetAxis("Move Joystick X");
+        float zMove = SimpleInput.GetAxis("Move Joystick Y");
+        Vector3 moveDirection = _playerTransform.forward * zMove + _playerTransform.right * xMove;
+        _playerCharacterController.SimpleMove(moveDirection * _moveSpeed);
     }
 }
