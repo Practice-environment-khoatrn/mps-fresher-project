@@ -20,7 +20,7 @@ public class MouseLook : MonoBehaviour
     private void OnValidate()
     {
         _playerTransform = GetComponent<PlayerInformation>().player.transform;
-        _playerCameraTransform = GetComponent<PlayerInformation>().playerCamera.transform;
+        _playerCameraTransform = GetComponent<PlayerInformation>().playerCameraHolder.transform;
     }
 
     private void Start()
