@@ -19320,6 +19320,8 @@ GameObject:
   - component: {fileID: 844158940}
   - component: {fileID: 844158939}
   - component: {fileID: 844158938}
+  - component: {fileID: 844158942}
+  - component: {fileID: 844158943}
   m_Layer: 0
   m_Name: FPSPlayer
   m_TagString: Untagged
@@ -19405,6 +19407,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!143 &844158942
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844158937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &844158943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844158937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0aa9ddb54144e4eb92a1dbdc6939c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 844158942}
+  _moveSpeed: 5
 --- !u!4 &846818158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012506713666, guid: 58d97d456aead63499ac7d5316541f78, type: 3}
@@ -42637,7 +42671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _upperLimitAngle: 30
   _lowerLimitAngle: -10
-  _lookSpeed: 5
+  _lookSpeed: 1
   _playerCamera: {fileID: 169183407}
 --- !u!1001 &1888570729
 PrefabInstance:
