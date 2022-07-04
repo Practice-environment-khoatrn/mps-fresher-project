@@ -11,12 +11,17 @@ public class MouseLook : MonoBehaviour
     private float _lowerLimitAngle;
     [SerializeField]
     private float _lookSpeed;
-    [SerializeField]
-    private Transform _playerCamera;
-    [SerializeField]
-    private Transform _player;
+    
+    private Transform _playerCameraTransform;
+    private Transform _playerTransform;
 
     const float FullCircleDegree = 2 * Mathf.PI * Mathf.Rad2Deg;
+
+    private void OnValidate()
+    {
+        _playerTransform = GetComponent<PlayerInformation>().player.transform;
+        _playerCameraTransform = GetComponent<PlayerInformation>().playerCamera.transform;
+    }
 
     private void Start()
     {
@@ -32,19 +37,19 @@ public class MouseLook : MonoBehaviour
     private void UpdateYaw()
     {
         float yaw = SimpleInput.GetAxis("Look Joystick X");
-        _player.transform.Rotate(0, yaw * _lookSpeed, 0);
+        _playerTransform.transform.Rotate(0, yaw * _lookSpeed, 0);
     }
 
     private void UpdatePitch()
     {
         float pitch = SimpleInput.GetAxis("Look Joystick Y");
         ClampPitch(ref pitch);
-        _playerCamera.transform.Rotate(-pitch * _lookSpeed, 0, 0);
+        _playerCameraTransform.transform.Rotate(-pitch * _lookSpeed, 0, 0);
     }
 
     private void ClampPitch(ref float pitch)
     {
-        float localXAngle = _playerCamera.transform.localEulerAngles.x;
+        float localXAngle = _playerCameraTransform.transform.localEulerAngles.x;
         ClampUpperPitch(ref pitch, localXAngle);
         ClampLowerPitch(ref pitch, localXAngle);
     }

@@ -24241,6 +24241,7 @@ GameObject:
   - component: {fileID: 1054240193}
   - component: {fileID: 1054240192}
   - component: {fileID: 1054240191}
+  - component: {fileID: 1054240194}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -24260,8 +24261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f0aa9ddb54144e4eb92a1dbdc6939c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 1
-  _fpsPlayer: {fileID: 844158937}
+  _moveSpeed: 5
 --- !u!114 &1054240192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24277,8 +24277,6 @@ MonoBehaviour:
   _upperLimitAngle: 30
   _lowerLimitAngle: -10
   _lookSpeed: 2
-  _playerCamera: {fileID: 169183407}
-  _player: {fileID: 844158941}
 --- !u!4 &1054240193
 Transform:
   m_ObjectHideFlags: 0
@@ -24293,6 +24291,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054240194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054240190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3cc56ed55f6a74ea0384eebae0b416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 844158937}
+  playerCamera: {fileID: 169183410}
 --- !u!1001 &1058550522
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,13 +10,12 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     private float _moveSpeed;
-    [SerializeField]
-    private GameObject _fpsPlayer;
 
     private void OnValidate()
     {
-        _playerTransform = _fpsPlayer.GetComponent<Transform>();
-        _playerCharacterController = _fpsPlayer.GetComponent<CharacterController>();
+        var player = GetComponent<PlayerInformation>().player;
+        _playerTransform = player.GetComponent<Transform>();
+        _playerCharacterController = player.GetComponent<CharacterController>();
     }
 
     private void Update()
