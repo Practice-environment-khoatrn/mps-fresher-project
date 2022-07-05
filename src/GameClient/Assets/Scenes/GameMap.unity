@@ -49318,7 +49318,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 0.3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -49343,7 +49343,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyManager: {fileID: 31491556}
+  _attackRange: 3.5
   _navMeshAgent: {fileID: 919132148816419730}
+  OnWalk:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132148816419732}
+        m_TargetAssemblyTypeName: BossAnimation, Assembly-CSharp
+        m_MethodName: PlayWalkAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 919132148816419732}
+        m_TargetAssemblyTypeName: BossAnimation, Assembly-CSharp
+        m_MethodName: PlayAttackAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &919132148816419732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148816419729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df483f277cbcac44f8ce08587500a93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5866666021176580945}
+--- !u!95 &5866666021176580945 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 504521983485329062, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
+  m_PrefabInstance: {fileID: 6227064020492428791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6227064020492428791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49351,6 +49400,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 504521983485329062, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 67305885b3570ff448ced52d70ad17ad, type: 2}
+    - target: {fileID: 504521983485329062, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5899786733728916700, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -49377,7 +49434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899786733728916700, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.504383
+      value: 9.77
       objectReference: {fileID: 0}
     - target: {fileID: 5899786733728916700, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
       propertyPath: m_LocalRotation.w

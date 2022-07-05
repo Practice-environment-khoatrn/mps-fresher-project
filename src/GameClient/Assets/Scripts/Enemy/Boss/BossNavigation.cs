@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class BossNavigation : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class BossNavigation : MonoBehaviour
     [HideInInspector]
     [SerializeField]
     private NavMeshAgent _navMeshAgent;
+
+    public UnityEvent OnWalk;
+    public UnityEvent OnAttack;
 
     private void OnValidate()
     {
@@ -42,11 +46,12 @@ public class BossNavigation : MonoBehaviour
     {
         _navMeshAgent.isStopped = false;
         _navMeshAgent.SetDestination(playerFootPos);
+        OnWalk.Invoke();
     }
 
     private void AttackPlayer()
     {
         _navMeshAgent.isStopped = true;
-        Debug.Log("Attacking player");
+        OnAttack.Invoke();
     }
 }
