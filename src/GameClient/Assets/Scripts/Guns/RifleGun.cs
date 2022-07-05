@@ -65,7 +65,7 @@ public class RifleGun : MonoBehaviour
 
     private void ProceedDamage(RaycastHit hitInfo)
     {
-        hitInfo.transform.gameObject.TryGetComponent<Health>(out Health enemyHealth);
+        Health enemyHealth = hitInfo.transform.gameObject.GetComponentInParent<Health>();
         if (enemyHealth != null)
         {
             enemyHealth.OnDamaged(_damage);

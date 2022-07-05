@@ -63,6 +63,6 @@ public class BossNavigation : MonoBehaviour
     public void StopNagivation()
     {
         _canNavigate = false;
-        _navMeshAgent.isStopped = true;
+        if (_navMeshAgent.enabled) _navMeshAgent.isStopped = true;
     }
 }
