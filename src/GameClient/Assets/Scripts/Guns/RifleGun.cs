@@ -12,8 +12,6 @@ public class RifleGun : MonoBehaviour
     private readonly int FireStateAnimHash = Animator.StringToHash("AlternateSingleFire");
 
     [SerializeField]
-    private Button _shootButton;
-    [SerializeField]
     private int _rpm;
     [SerializeField]
     private Animator _animator;
