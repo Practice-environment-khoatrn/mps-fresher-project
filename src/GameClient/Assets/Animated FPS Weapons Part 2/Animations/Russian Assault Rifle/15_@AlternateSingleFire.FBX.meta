@@ -478,7 +478,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.027536528
+      - time: 0.014390076
+        functionName: PlayFireSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.02036807
         functionName: AddSingleFireEffects
         data: 
         objectReferenceParameter: {instanceID: 0}

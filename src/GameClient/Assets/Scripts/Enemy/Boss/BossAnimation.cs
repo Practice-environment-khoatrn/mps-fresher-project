@@ -27,4 +27,10 @@ public class BossAnimation : MonoBehaviour
         _animator.SetBool(IsWalkingHash, false);
         _animator.SetBool(IsAttackingHash, true);
     }
+
+    public void PlayDieAnimation()
+    {
+        _animator.SetBool(IsWalkingHash, false);
+        _animator.SetBool(IsAttackingHash, false);
+    }
 }

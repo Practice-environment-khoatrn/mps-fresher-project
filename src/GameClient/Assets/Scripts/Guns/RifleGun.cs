@@ -19,6 +19,12 @@ public class RifleGun : MonoBehaviour
     private int _rpm;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private Transform _aimingCamera;
+    [SerializeField]
+    private float _damage;
+    [SerializeField]
+    private GameObject _hitEffect;
     
     private float _lastShotTime;
 
@@ -43,7 +49,32 @@ public class RifleGun : MonoBehaviour
     private void Shoot()
     {
         _animator.Play(FireStateAnimHash);
+        Raycast();
         OnShoot.Invoke();
+    }
+
+    private void Raycast()
+    {
+        Ray aimingRay = new Ray(_aimingCamera.position, _aimingCamera.forward);
+        if (Physics.Raycast(aimingRay, out RaycastHit hitInfo))
+        {
+            ProceedDamage(hitInfo);
+            CreateHitEffect(hitInfo);
+        }
+    }
+
+    private void ProceedDamage(RaycastHit hitInfo)
+    {
+        hitInfo.transform.gameObject.TryGetComponent<Health>(out Health enemyHealth);
+        if (enemyHealth != null)
+        {
+            enemyHealth.OnDamaged(_damage);
+        }
+    }
+
+    private void CreateHitEffect(RaycastHit hitInfo)
+    {
+        Instantiate(_hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
     }
 
     public void PlayFireSound()

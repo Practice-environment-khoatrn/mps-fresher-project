@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 public class BossNavigation : MonoBehaviour
 {
+    private bool _canNavigate = true;
+
     [SerializeField]
     private EnemyManager _enemyManager;
     [SerializeField]
@@ -25,7 +27,10 @@ public class BossNavigation : MonoBehaviour
 
     private void Update()
     {
-        UpdateNavigation();
+        if (_canNavigate)
+        {
+            UpdateNavigation();
+        }
     }
 
     private void UpdateNavigation()
@@ -53,5 +58,11 @@ public class BossNavigation : MonoBehaviour
     {
         _navMeshAgent.isStopped = true;
         OnAttack.Invoke();
+    }
+
+    public void StopNagivation()
+    {
+        _canNavigate = false;
+        _navMeshAgent.isStopped = true;
     }
 }
