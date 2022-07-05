@@ -1,14 +1,18 @@
+using Assets.Scripts.MyInputManager;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class RifleGun : MonoBehaviour
 {
     private const int SECONDS_PER_MINUTE = 60;
     private readonly int FireStateAnimHash = Animator.StringToHash("AlternateSingleFire");
 
+    [SerializeField]
+    private Button _shootButton;
     [SerializeField]
     private int _rpm;
     [SerializeField]
@@ -18,7 +22,7 @@ public class RifleGun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if (MyInputManager.GetButton("Shoot"))
         {
             UpdateShooting();
         }
