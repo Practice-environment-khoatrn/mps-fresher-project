@@ -12,6 +12,8 @@ public class RifleGun : MonoBehaviour
     private readonly int FireStateAnimHash = Animator.StringToHash("AlternateSingleFire");
 
     [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
     private int _rpm;
     [SerializeField]
     private Animator _animator;
@@ -39,5 +41,10 @@ public class RifleGun : MonoBehaviour
     private void Shoot()
     {
         _animator.Play(FireStateAnimHash);
+    }
+
+    public void PlayFireSound()
+    {
+        _audioSource.Play();
     }
 }
