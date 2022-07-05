@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class RifleGun : MonoBehaviour
 {
+    public UnityEvent OnShoot;
+    
     private const int SECONDS_PER_MINUTE = 60;
     private readonly int FireStateAnimHash = Animator.StringToHash("AlternateSingleFire");
 
@@ -41,6 +43,7 @@ public class RifleGun : MonoBehaviour
     private void Shoot()
     {
         _animator.Play(FireStateAnimHash);
+        OnShoot.Invoke();
     }
 
     public void PlayFireSound()
