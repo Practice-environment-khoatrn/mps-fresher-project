@@ -27,8 +27,8 @@ public class RagdollSwitcher : MonoBehaviour
 
     private void SetRagdoll(bool enableValue)
     {
-        _navMeshAgent.enabled = !enableValue;
-        _animator.enabled = !enableValue;
+        if (_navMeshAgent != null) _navMeshAgent.enabled = !enableValue;
+        if (_animator != null) _animator.enabled = !enableValue;
         for (int i = 0; i < _rigidbodies.Length; i++)
         {
             _rigidbodies[i].isKinematic = !enableValue;

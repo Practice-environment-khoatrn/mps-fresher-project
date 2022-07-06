@@ -87,4 +87,7 @@ public class RifleGun : MonoBehaviour
     {
         _audioSource.Play();
     }
+
+    public void Lock() => enabled = false;
+    public void Unlock() => enabled = true;
 }
