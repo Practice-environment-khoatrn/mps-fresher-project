@@ -26,7 +26,6 @@ public class GameFlow : MonoBehaviour
     private void ShowGameWon()
     {
         _winCanvas.gameObject.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void OnGameLost()

@@ -13178,7 +13178,7 @@ MonoBehaviour:
   _pauseCanvas: {fileID: 192668511}
   _winCanvas: {fileID: 1959848390}
   _loseCanvas: {fileID: 1419984676}
-  _timeToWin: 5
+  _timeToWin: 3
 --- !u!1001 &475027955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20672,7 +20672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844158937}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 15.7, y: 1, z: 20.03}
+  m_LocalPosition: {x: 17.42, y: 1, z: 20.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1886276161}
@@ -52685,7 +52685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092890883583547497, guid: e8be3352513bbb846acf0c6cd0dbce19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.6
+      value: 14.84
       objectReference: {fileID: 0}
     - target: {fileID: 2092890883583547497, guid: e8be3352513bbb846acf0c6cd0dbce19, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52693,7 +52693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2092890883583547497, guid: e8be3352513bbb846acf0c6cd0dbce19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.9
+      value: -30.61
       objectReference: {fileID: 0}
     - target: {fileID: 2092890883583547497, guid: e8be3352513bbb846acf0c6cd0dbce19, type: 3}
       propertyPath: m_LocalRotation.w
