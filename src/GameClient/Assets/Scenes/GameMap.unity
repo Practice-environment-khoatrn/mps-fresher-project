@@ -45169,7 +45169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 835745205, guid: 15bf7ab6e14a35344a0ec7bfb372c03b, type: 3}
       propertyPath: _damage
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 835745205, guid: 15bf7ab6e14a35344a0ec7bfb372c03b, type: 3}
       propertyPath: _hitEffect
@@ -45179,6 +45179,10 @@ PrefabInstance:
       propertyPath: _aimingCamera
       value: 
       objectReference: {fileID: 169183407}
+    - target: {fileID: 835745205, guid: 15bf7ab6e14a35344a0ec7bfb372c03b, type: 3}
+      propertyPath: _hitEffectManager
+      value: 
+      objectReference: {fileID: 1970657121}
     - target: {fileID: 1806298002, guid: 15bf7ab6e14a35344a0ec7bfb372c03b, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -45806,6 +45810,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000012771108642, guid: 9d1bb44d500a3ad489d3cb3a6900199f, type: 3}
   m_PrefabInstance: {fileID: 1969465883}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1970657117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3260727174520607766, guid: 15bf7ab6e14a35344a0ec7bfb372c03b, type: 3}
+  m_PrefabInstance: {fileID: 1955727150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1970657121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970657117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f5122d85ad7374ba3e03d69a4e6734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maximum: 3
+  _hitEffect: {fileID: 1014246979351853544, guid: 10ad2e80b58fb0244b68bc5262b6dca2, type: 3}
 --- !u!4 &1979402835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013041734426, guid: d803e729730d97a4e89edf13b602b3f4, type: 3}
@@ -50525,6 +50548,10 @@ PrefabInstance:
     - target: {fileID: 6533474470324682342, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6533474470324682342, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d899e7faf999654fb09ac72b2219ba6, type: 3}

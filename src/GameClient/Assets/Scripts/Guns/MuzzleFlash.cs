@@ -28,7 +28,7 @@ public class MuzzleFlash : MonoBehaviour
 
     public void Show()
     {
-        transform.rotation = Quaternion.Euler(0, 180, 0);
+        transform.localRotation = Quaternion.Euler(0, 180, 0);
         _muzzleFlash.gameObject?.SetActive(true);
         _flashLight.SetActive(true);
         float angle = Random.Range(0, 360f);

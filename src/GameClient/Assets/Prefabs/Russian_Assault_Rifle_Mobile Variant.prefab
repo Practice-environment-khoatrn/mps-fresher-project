@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5522201699211265832, guid: 228c8b2a220b1d44aa5577f7900623b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.036
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 5522201699211265833, guid: 228c8b2a220b1d44aa5577f7900623b3, type: 3}
       propertyPath: m_IsActive
@@ -490,3 +490,6 @@ MonoBehaviour:
   _audioSource: {fileID: 1969376395}
   _rpm: 600
   _animator: {fileID: 3260727174513223238}
+  _aimingCamera: {fileID: 0}
+  _damage: 0
+  _hitEffectManager: {fileID: 0}

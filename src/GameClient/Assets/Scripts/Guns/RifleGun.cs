@@ -23,10 +23,16 @@ public class RifleGun : MonoBehaviour
     private Transform _aimingCamera;
     [SerializeField]
     private float _damage;
+    [HideInInspector]
     [SerializeField]
-    private GameObject _hitEffect;
+    private HitEffectManager _hitEffectManager;
     
     private float _lastShotTime;
+
+    private void OnValidate()
+    {
+        _hitEffectManager = GetComponent<HitEffectManager>();
+    }
 
     private void Update()
     {
@@ -74,7 +80,7 @@ public class RifleGun : MonoBehaviour
 
     private void CreateHitEffect(RaycastHit hitInfo)
     {
-        Instantiate(_hitEffect, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+        _hitEffectManager.CreateHitEffect(hitInfo);
     }
 
     public void PlayFireSound()
