@@ -15,15 +15,20 @@ public class HitEffectManager : MonoBehaviour
     {
         if (_hitEffects.Count >= _maximum)
         {
-            DestroyFirstHitEffect();
+            ReactivateFirstHitEffect(hitInfo);
+        } 
+        else
+        {
+            CreateNewHitEffect(hitInfo);
         }
-        CreateNewHitEffect(hitInfo);
     }
 
-    private void DestroyFirstHitEffect()
+    private void ReactivateFirstHitEffect(RaycastHit hitInfo)
     {
         GameObject firstHitEffect = _hitEffects.Dequeue();
-        Destroy(firstHitEffect);
+        firstHitEffect.SetActive(true);
+        firstHitEffect.transform.SetPositionAndRotation(hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+        _hitEffects.Enqueue(firstHitEffect);
     }
 
     private void CreateNewHitEffect(RaycastHit hitInfo)
