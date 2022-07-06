@@ -20,6 +20,11 @@ public class GunAmmo : MonoBehaviour
     private int _magazineSize;
     private int _loadedAmmo;
 
+    public int GetMagazineSize()
+    {
+        return _magazineSize;
+    }
+
     public int LoadedAmmo
     {
         get => _loadedAmmo;

@@ -11,12 +11,25 @@ public class AmmoText : MonoBehaviour
     [SerializeField]
     private TMP_Text _ammoText;
 
-    private readonly StringBuilder _ammoStringBuilder = new StringBuilder();
+    private string[] _ammoStrings;
+
+    private void Start()
+    {
+        InitializeAmmoStrings();
+    }
+
+    private void InitializeAmmoStrings()
+    {
+        int magazineSize = _gunAmmo.GetMagazineSize();
+        _ammoStrings = new string[magazineSize + 1];
+        for (int i = 0; i < magazineSize + 1; i++)
+        {
+            _ammoStrings[i] = i.ToString();
+        }
+    }
 
     private void Update()
     {
-        _ammoStringBuilder.Clear();
-        _ammoStringBuilder.Append(_gunAmmo.LoadedAmmo);
-        _ammoText.text = _ammoStringBuilder.ToString();
+        _ammoText.text = _ammoStrings[_gunAmmo.LoadedAmmo];
     }
 }
