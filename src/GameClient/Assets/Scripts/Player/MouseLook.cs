@@ -11,17 +11,13 @@ public class MouseLook : MonoBehaviour
     private float _lowerLimitAngle;
     [SerializeField]
     private float _lookSpeed;
-    
+    [SerializeField]
     private Transform _playerCameraTransform;
+    [SerializeField]
     private Transform _playerTransform;
 
     const float FullCircleDegree = 2 * Mathf.PI * Mathf.Rad2Deg;
 
-    private void OnValidate()
-    {
-        _playerTransform = GetComponent<PlayerInformation>().player.transform;
-        _playerCameraTransform = GetComponent<PlayerInformation>().playerCameraHolder.transform;
-    }
 
     private void Start()
     {

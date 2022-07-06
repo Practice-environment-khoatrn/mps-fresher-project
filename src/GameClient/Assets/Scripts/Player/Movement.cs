@@ -5,22 +5,16 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    [SerializeField]
     private Transform _playerTransform;
+    [SerializeField]
     private CharacterController _playerCharacterController;
-
     [SerializeField]
     private float _moveSpeed;
 
-    private void OnValidate()
-    {
-        var player = GetComponent<PlayerInformation>().player;
-        _playerTransform = player.GetComponent<Transform>();
-        _playerCharacterController = player.GetComponent<CharacterController>();
-    }
-
     private void Update()
     {
-        MoveByKey();
+        //MoveByKey();
         MoveByJoystick();
     }
 
