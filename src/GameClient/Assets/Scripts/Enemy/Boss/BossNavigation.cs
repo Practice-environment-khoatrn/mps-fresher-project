@@ -19,6 +19,7 @@ public class BossNavigation : MonoBehaviour
 
     public UnityEvent OnWalk;
     public UnityEvent OnAttack;
+    public UnityEvent OnHasAttacked;
 
     private void OnValidate()
     {
@@ -64,5 +65,10 @@ public class BossNavigation : MonoBehaviour
     {
         _canNavigate = false;
         if (_navMeshAgent.enabled) _navMeshAgent.isStopped = true;
+    }
+
+    public void BossHasAttacked()
+    {
+        OnHasAttacked.Invoke();
     }
 }
