@@ -11,10 +11,10 @@ namespace Assets.Scripts.MyInputManager
     {
         [SerializeField]
         private string _buttonName;
-
+        
         private MyButton _myButton;
 
-        private void OnValidate()
+        private void Awake()
         {
             _myButton = MyButton.InstantiateMyButton(_buttonName);
         }
