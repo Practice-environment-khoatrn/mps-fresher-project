@@ -10,7 +10,7 @@ public class RifleGun : MonoBehaviour
 {
     public UnityEvent OnShoot;
     
-    private const int SECONDS_PER_MINUTE = 60;
+    private const float SECONDS_PER_MINUTE = 60f;
     private readonly int FireStateAnimHash = Animator.StringToHash("AlternateSingleFire");
 
     [SerializeField]
